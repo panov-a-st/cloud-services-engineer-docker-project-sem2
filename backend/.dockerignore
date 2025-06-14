@@ -1,0 +1,14 @@
+.env
+.git
+.gitignore
+bin/
+build/
+test/
+tests/
+tmp/
+temp/
+*_test.*
+*.test
+*.log
+*.out
+*.md
