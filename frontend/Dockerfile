@@ -33,7 +33,8 @@ COPY --chown=user:user nginx.conf /etc/nginx/conf.d/default.conf
 RUN chown -R user:user /var/cache/nginx \
     && chown -R user:user /var/log/nginx \
     && chown -R user:user /etc/nginx/conf.d \
-    && chmod -R 755 /var/www/html/momo-store
+    && chmod -R 755 /var/www/html/momo-store \
+    && touch /var/run/nginx.pid && chown user:user /var/run/nginx.pid
 
 # Используем нового пользователя
 USER user
