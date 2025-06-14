@@ -3,7 +3,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: docker_sem2-backend:latest
+    image: docker-project-backend:latest
     container_name: app-backend
     restart: on-failure
     ports:
@@ -19,7 +19,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - docker_sem2-local-net
+      - docker-project-local-net
     deploy:
       resources:
         limits:
@@ -30,7 +30,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: docker_sem2-frontend:latest
+    image: docker-project-frontend:latest
     container_name: app-frontend
     restart: unless-stopped
     ports:
@@ -59,7 +59,7 @@ services:
       - no-new-privileges:true
     networks:
       - public
-      - docker_sem2-local-net
+      - docker-project-local-net
     deploy:
       resources:
         limits:
@@ -69,6 +69,6 @@ services:
 networks:
   public:
     driver: bridge
-  docker_sem2-local-net:
+  docker-project-local-net:
     driver: bridge
     internal: true
